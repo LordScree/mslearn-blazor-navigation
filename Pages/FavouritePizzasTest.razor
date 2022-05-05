@@ -1,0 +1,13 @@
+@page "/favouritepizza/{fave?}"
+
+<p>Your favourite pizza is: @Fave</p>
+
+@code {
+    [Parameter]
+    public string Fave { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        Fave ??= "Hawaiian";
+    }
+}
